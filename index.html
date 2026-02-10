@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rabelus.ai Reader - Leitor Inteligente de Quadrinhos, EPUBs e PDFs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      /* Hide scrollbar while keeping functionality */
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+    /* Hide scrollbar while keeping functionality */
+    ::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, and Opera */
+    }
+    @keyframes page-turn-next {
+      from { transform: translateX(50px) scale(0.95); opacity: 0; }
+      to { transform: translateX(0) scale(1); opacity: 1; }
+    }
+    .animate-page-turn-next {
+      animation: page-turn-next 0.3s ease-in-out;
+    }
+    @keyframes page-turn-prev {
+      from { transform: translateX(-50px) scale(0.95); opacity: 0; }
+      to { transform: translateX(0) scale(1); opacity: 1; }
+    }
+    .animate-page-turn-prev {
+      animation: page-turn-prev 0.3s ease-in-out;
+    }
+    /* Custom styles for the new header design */
+    .header-gradient-border {
+        --border-color-light: rgba(212, 212, 216, 0.6); /* zinc-300 with opacity */
+        --border-color-dark: rgba(82, 82, 91, 0.6);   /* zinc-600 with opacity */
+    }
+    .header-gradient-border::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border-color-light), transparent);
+    }
+    .dark .header-gradient-border::after {
+      background: linear-gradient(to right, transparent, var(--border-color-dark), transparent);
+    }
+    
+    .header-gradient-border-dark::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(82, 82, 91, 0.6), transparent);
+    }
+
+    .logo-text {
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+    .dark .logo-text {
+        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-ai {
+        font-weight: 500;
+        opacity: 0.95;
+        background: linear-gradient(to right, #059669, #ca8a04); /* emerald-600, yellow-600 */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        padding-left: 2px;
+    }
+
+    .dark .logo-ai {
+        background: linear-gradient(to right, #34d399, #f59e0b); /* emerald-400, amber-500 */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.21.0",
+    "jszip": "https://aistudiocdn.com/jszip@^3.10.1",
+    "epubjs": "https://aistudiocdn.com/epubjs@^0.3.93",
+    "pdfjs-dist/": "https://aistudiocdn.com/pdfjs-dist@4.4.168/",
+    "pdfjs-dist": "https://aistudiocdn.com/pdfjs-dist@^5.4.149"
+  }
+}
+</script>
+</head>
+<body class="antialiased">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

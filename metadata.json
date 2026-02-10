@@ -1,0 +1,5 @@
+{
+  "name": "Rabelus.ai Reader V1.0a",
+  "description": "Um leitor inteligente de HQs, EPUBs e PDFs. Usa IA para identificar e navegar pelos painéis da página, proporcionando uma experiência de leitura guiada. Salva sua biblioteca no navegador para acesso offline.",
+  "requestFramePermissions": []
+}
